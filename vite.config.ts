@@ -11,6 +11,8 @@ function getPlugins() {
   return plugins;
 }
 
+// 👇 修改部分：添加 base 配置（替换为你的仓库名）
 export default defineConfig({
+  base: "/sosun/",  // <-- 替换为你的仓库名，例如 /vite-ui/
   plugins: getPlugins(),
 });
