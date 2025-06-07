@@ -18,15 +18,17 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
-      - name: 📦 Enable Corepack & Install pnpm
-        run: corepack enable
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
       - name: 📦 Install dependencies
         run: pnpm install
 
-      - name: ⚙️ Set base path for GitHub Pages (optional)
+      - name: ⚙️ Inject base path for GitHub Pages
         run: |
-          sed -i 's|base: .*|base: "/${{ github.event.repository.name }}/",|' vite.config.ts || true
+          sed -i 's|defineConfig({|defineConfig({ base: "/${{ github.event.repository.name }}/", |' vite.config.ts
 
       - name: 🛠️ Build project
         run: pnpm run build
