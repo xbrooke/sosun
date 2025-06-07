@@ -10,26 +10,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 拉取代码
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v2
         with:
           persist-credentials: false
 
-      # 安装 pnpm
       - name: Install pnpm
         run: npm install -g pnpm
 
-      # 安装依赖并构建
-      - name: Build
+      - name: Install dependencies and build
         run: |
           pnpm install
           npm run build
 
-      # 部署到 GitHub Pages
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: docs/.vitepress/dist
+          FOLDER: dist/static
