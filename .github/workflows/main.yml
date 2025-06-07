@@ -1,16 +1,14 @@
 name: Deploy GitHub Pages
 
-# 触发条件：在 push 到 wiki 分支后
 on:
   push:
     branches:
       - main
 
-# 任务
 jobs:
   build-and-deploy:
-    # 服务器环境：最新版 Ubuntu
     runs-on: ubuntu-latest
+
     steps:
       # 拉取代码
       - name: Checkout
@@ -18,9 +16,15 @@ jobs:
         with:
           persist-credentials: false
 
-      # 生成静态文件
+      # 安装 pnpm
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      # 安装依赖并构建
       - name: Build
-        run: npm install && npm run build
+        run: |
+          pnpm install
+          npm run build
 
       # 部署到 GitHub Pages
       - name: Deploy
