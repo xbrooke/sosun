@@ -4,16 +4,14 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      // 处理GitHub Pages的SPA路由问题
-      const segment = 1;
-      const l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + segment).join('/') + '/?p=/' +
-        l.pathname.slice(1).split('/').slice(segment).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      // 处理SPA路由问题 - 更简单的重定向逻辑
+      const path = window.location.pathname;
+      const search = window.location.search;
+      const hash = window.location.hash;
+      
+      // 直接重定向到index.html并保留路径
+      sessionStorage.redirect = path;
+      window.location.href = '/#' + path + (search || '') + (hash || '');
     </script>
   </head>
   <body>

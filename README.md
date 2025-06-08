@@ -2,44 +2,54 @@
 
 ## GitHub Pages 部署指南
 
-1. **配置GitHub Pages**
-   - 进入仓库的Settings > Pages
-   - 选择部署分支(通常是gh-pages或main)
-   - 设置Source为分支和/docs文件夹(或根目录)
-   - 确保Custom domain留空(除非你有自定义域名)
+1. 确保项目已推送到GitHub仓库
+2. 在仓库设置中启用GitHub Pages
+3. 选择部署分支（通常是gh-pages或main）
+4. 设置根目录为 `/ (root)`
 
-2. **路由问题解决方案**
-   - 确保已添加public/404.html文件
-   - 如果使用自定义路径(如username.github.io/repo), 修改vite.config.ts中的base:
-     ```js
-     base: '/repo/' // 替换为你的仓库名
-     ```
+### 路由问题解决方案
 
-3. **访问页面**
-   - 主页面: https://username.github.io/repo/
-   - 关于页面: https://username.github.io/repo/about
-   - 赞赏历史: https://username.github.io/repo/reward-history
+GitHub Pages默认不支持SPA路由，需要以下配置：
 
-## 项目结构
-
-- `src/pages/` - 页面组件
-  - `Home.tsx` - 首页
-  - `About.tsx` - 关于页面
-  - `RewardHistory.tsx` - 赞赏历史
-
-- `src/components/` - 可复用组件
-  - `RewardHistoryList.tsx` - 赞赏列表
-  - `RewardItem.tsx` - 单个赞赏项
-
-## 本地开发
-
-```bash
-npm install
-npm run dev
+1. 项目必须包含`public/404.html`文件
+2. 确保vite配置正确：
+```js
+// vite.config.ts
+export default defineConfig({
+  base: '/your-repo-name/', // 如果部署在子路径
+  // ...
+})
 ```
 
-## 构建生产版本
-
-```bash
-npm run build
+3. 路由组件需要处理哈希路由：
+```jsx
+<BrowserRouter basename={import.meta.env.BASE_URL}>
+  {/* 路由配置 */}
+</BrowserRouter>
 ```
+
+### 本地测试
+
+1. 安装`gh-pages`:
+```bash
+npm install gh-pages --save-dev
+```
+
+2. 在package.json中添加部署脚本:
+```json
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+}
+```
+
+3. 运行部署:
+```bash
+npm run deploy
+```
+
+### 注意事项
+
+- 首次部署可能需要几分钟生效
+- 清除浏览器缓存后测试
+- 如果使用自定义域名，需要配置CNAME文件
