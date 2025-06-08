@@ -112,7 +112,9 @@ export default function DownloadSection() {
                     下载 {appInfo.versions[version].name}
                   </motion.button>
                   <div className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
-                    By菜菜菜蔡虎
+                   <div className="mt-4 text-center text-sm text-gray-700 dark:text-gray-300">
+                     By菜菜菜蔡虎
+                   </div>
                   </div>
                 </div>
               </motion.div>

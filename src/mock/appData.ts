@@ -38,7 +38,7 @@ export const appInfo = {
       ]
     },
     pro: {
-      name: "Pro",
+      name: "Pro版",
       version: "v2.1.0",
       description: "更丰富的车机应用",
       features: [
