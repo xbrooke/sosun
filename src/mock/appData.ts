@@ -25,26 +25,26 @@
  * - 微信公众号二维码(wechatQR) - 建议尺寸: 430x430
  */
 export const appInfo = {
-  name: "领克第三方应用商店",
+  name: "领克车机应用商店",
   versions: {
     free: {
-      name: "Free 版",
-      version: "v1.0.0",
-      description: "所有软件免费使用",
+      name: "Free版",
+      version: "v1.2.0",
+      description: "基础车机功能体验",
       features: [
-        "快速进入设置",
-        "简单笔记功能",
-        "基本提醒功能"
+        "车机应用一键安装",
+        "基础主题切换",
+        "集成系统设置"
       ]
     },
     pro: {
-      name: "Pro 版",
-      version: "v2.0.0",
-      description: "解锁全部高级功能",
+      name: "Pro",
+      version: "v2.1.0",
+      description: "更丰富的车机应用",
       features: [
-        "智能任务管理",
-        "数据统计分析", 
-        "云同步功能"
+        "更多适配软件",
+        "驾驶行为分析", 
+        "车机性能优化"
       ]
     }
   },
@@ -57,8 +57,8 @@ export const rewardData = {
    wechatQR: "https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=wechat%20payment%20qr%20code%20with%20modern%20design&sign=d83f52bb3d4875ba2996080a3df6be8b",
    // 支付宝二维码 - 建议尺寸: 430x430
    alipayQR: "https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=alipay%20payment%20qr%20code%20with%20modern%20design&sign=cbd72561e200563ae1af5e52e2cfbcf0",
-   thankText: "您的支持将帮助我们持续改进应用",
-    suggestion: "请输入自定义金额进行赞赏"
+    thankText: "您的支持将帮助我们开发更多车机实用功能",
+    suggestion: "建议赞赏金额：6.6元、8.8元、16.6元"
  };
 
 export const wechatAccounts = {
@@ -67,19 +67,19 @@ export const wechatAccounts = {
 
 export const tutorials = [
   {
-    title: "快速入门指南",
-    description: "10分钟快速掌握应用核心功能，立即提升工作效率",
-    link: "https://example.com/tutorial/quick-start"
+    title: "快速安装应用",
+    description: "车机应用安装一条龙",
+    link: "https://hblog.xbrooke.cn/p/22189.html"
   },
   {
-    title: "高级使用技巧",
-    description: "探索隐藏的高级功能和快捷操作方式，成为高级用户",
-    link: "https://example.com/tutorial/advanced"
+    title: "应用商店使用指南",
+    description: "详细讲解如何使用应用商店",
+    link: "https://hblog.xbrooke.cn/p/60576.html"
   },
   {
-    title: "数据统计分析",
-    description: "学会使用强大的数据分析功能，洞察您的行为模式",
-    link: "https://example.com/tutorial/analytics"
+    title: "车机常见问题",
+    description: "详细讲解安装过程遇到的问题",
+    link: "https://hblog.xbrooke.cn/p/da7.html"
   }
 ];
 
@@ -87,10 +87,10 @@ export const tutorials = [
 export const wechatQR = "https://space.coze.cn/api/coze_space/gen_image?image_size=square&prompt=modern%20wechat%20official%20account%20qr%20code%20design&sign=c2fe00c84d5d50949ad4f11680cf530d";
 
 export const statsData = [
-  { value: "10万+", label: "用户下载" },
-  { value: "98%", label: "用户满意度" },
-  { value: "24/7", label: "技术支持" },
-  { value: "50+", label: "实用功能" }
+  { value: "2000+", label: "用户下载" },
+  { value: "100%", label: "适用新手" },
+  { value: "24/7", label: "专属沟通群" },
+  { value: "50+", label: "实用应用" }
 ];
 
 export const testimonials = [
@@ -117,18 +117,20 @@ export const testimonials = [
 // 轮播图配置 - 建议尺寸: 16:9宽屏
 export const carouselItems = [
   {
-    title: "智能任务管理",
-    description: "高效管理您的日常任务和项目",
-    image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=a%20modern%20task%20management%20interface%20with%20clean%20design&sign=40b0e55cbf3b86ffdf4aa7413e055e3d"
+    title: "领克车机应用商店",
+    description: "专为领克车主打造的应用平台",
+    image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=modern%20car%20infotainment%20system%20interface%20with%20app%20store&sign=8c2957ec742c299324d4406f96120f28"
   },
   {
-    title: "数据分析",
-    description: "可视化您的行为数据，获得洞察",
-    image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=a%20data%20analysis%20dashboard%20with%20charts%20and%20graphs&sign=a1a16943428dd870ab17e25840b03342"
+    title: "驾驶行为分析",
+    description: "专业分析您的驾驶习惯",
+    image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=car%20dashboard%20with%20driving%20analytics&sign=30b0b92f0f22cd527c05b12b24ecb61c"
   },
   {
-    title: "个人助手 Pro",
-    description: "提升您的工作效率与生活品质",
-    image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=a%20modern%20productivity%20app%20interface%20with%20minimal%20design&sign=f80049113d17b106b778dd991f7bbf5e"
+    title: "车机主题定制",
+    description: "个性化您的车机界面",
+    image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=car%20infotainment%20system%20with%20customizable%20themes&sign=cc25f1a2f7d63c278c608299c1603ec8"
   }
 ];
+
+

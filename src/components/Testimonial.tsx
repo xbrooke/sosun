@@ -59,14 +59,14 @@ export default function Testimonial() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-              viewport={{ once: true }}
-              className="bg-white/80 dark:bg-gray-800/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all border border-gray-200/50 dark:border-gray-700/50"
+             <motion.div
+               key={index}
+               initial={{ opacity: 0, y: 12 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               whileHover={{ y: -6, scale: 1.01 }}
+               transition={{ duration: 0.25 }}
+               viewport={{ once: true }}
+               className="bg-white/80 dark:bg-gray-800/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-lg transition-all border border-gray-200/50 dark:border-gray-700/50"
             >
               <motion.div className="flex flex-col items-center mb-8">
                 <motion.div 
@@ -106,10 +106,14 @@ export default function Testimonial() {
                     className="flex items-center py-3 px-4 rounded-xl bg-white/50 dark:bg-gray-700/50 hover:bg-white/80 dark:hover:bg-gray-700/80 transition-all shadow-sm hover:shadow-md"
                     whileHover={{ x: 5 }}
                   >
-                    <div className="bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-400 dark:to-blue-500 rounded-full p-2 mr-4 shadow-sm">
-                      <i className="fa-solid fa-check text-white text-sm"></i>
-                    </div>
-                    <span className="text-lg font-medium text-gray-700 dark:text-gray-300">{feature}</span>
+                   <div className="p-2 mr-4">
+                     {feature.includes("LYNK OS N") ? (
+                       <i className="fa-solid fa-car text-blue-600 dark:text-blue-400 text-lg"></i>
+                     ) : (
+                       <i className="fa-solid fa-check text-white text-sm"></i>
+                     )}
+                   </div>
+                   <span className="text-lg font-medium text-gray-700 dark:text-gray-300">{feature}</span>
                   </motion.div>
                 ))}
               </div>

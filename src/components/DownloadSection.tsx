@@ -40,12 +40,16 @@ export default function DownloadSection() {
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
-        <motion.div 
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-700 dark:from-blue-700 dark:to-purple-800 p-10 rounded-3xl shadow-2xl max-w-6xl mx-auto"
-        >
+          <motion.div 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ 
+              duration: 0.3,
+              ease: [0.16, 1, 0.3, 1],
+              willChange: 'transform, opacity'
+            }}
+            className="bg-gradient-to-r from-blue-600 to-purple-700 dark:from-blue-700 dark:to-purple-800 p-10 rounded-3xl shadow-2xl max-w-6xl mx-auto"
+          >
           <div className="flex flex-col items-center mb-12">
             <motion.img 
               src={appInfo.icon} 
@@ -107,12 +111,16 @@ export default function DownloadSection() {
                     <i className="fa-solid fa-download mr-2"></i>
                     下载 {appInfo.versions[version].name}
                   </motion.button>
+                  <div className="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
+                    By菜菜菜蔡虎
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
       </div>
+
 
       {showModal && (
         <>

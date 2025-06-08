@@ -62,24 +62,29 @@ export default function Carousel() {
     <div className="relative h-96 overflow-hidden bg-gray-100 dark:bg-gray-800">
       <div className="absolute inset-0 flex">
         {carouselItems.map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0 }}
-            animate={{ 
-              opacity: index === currentIndex ? 1 : 0,
-              x: `${(index - currentIndex) * 100}%`
-            }}
-            transition={{ duration: 0.8 }}
-            className="w-full h-full flex-shrink-0 relative"
-          >
+            <motion.div
+              key={index}
+              initial={{ opacity: 0 }}
+              animate={{ 
+                opacity: index === currentIndex ? 1 : 0,
+                x: `${(index - currentIndex) * 100}%`
+              }}
+              transition={{ 
+                duration: 0.35,
+                ease: [0.16, 1, 0.3, 1],
+                willChange: 'transform, opacity'
+              }}
+              className="w-full h-full flex-shrink-0 relative"
+            >
             {loadedImages[index] !== false && (
-              <img 
-                src={item.image} 
-                alt={item.title}
-                className="w-full h-full object-cover"
-                onError={() => handleImageError(index)}
-                onLoad={() => handleImageLoad(index)}
-              />
+                <img 
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                  onError={() => handleImageError(index)}
+                  onLoad={() => handleImageLoad(index)}
+                  crossOrigin="anonymous"
+                />
             )}
             {loadedImages[index] === false && (
               <div className="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">

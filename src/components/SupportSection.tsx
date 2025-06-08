@@ -119,6 +119,48 @@ export default function SupportSection() {
           </motion.p>
         </motion.div>
       </div>
+
+      <div className="mt-12 text-center">
+        <motion.button
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ 
+            opacity: 1, 
+            y: 0,
+            transition: {
+              delay: 0.2,
+              duration: 0.25
+            }
+          }}
+          whileHover={{ 
+            scale: 1.02,
+            boxShadow: "0 4px 12px rgba(79, 70, 229, 0.25)",
+            transition: {
+              type: "spring",
+              stiffness: 500,
+              damping: 15
+            }
+          }}
+          whileTap={{ 
+            scale: 0.98,
+            transition: {
+              type: "spring",
+              stiffness: 700,
+              damping: 20
+            }
+          }}
+          viewport={{ once: true, margin: "-100px" }}
+          onClick={() => window.location.href = '/reward-history'}
+          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-md hover:shadow-lg transition-all"
+        >
+          <motion.span
+            whileHover={{ x: 2 }}
+            transition={{ type: "spring", stiffness: 500 }}
+          >
+            <i className="fa-solid fa-list-check mr-2"></i>
+            查看历史赞赏名单
+          </motion.span>
+        </motion.button>
+      </div>
     </section>
   );
 }

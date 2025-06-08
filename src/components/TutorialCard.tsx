@@ -1,3 +1,18 @@
+/**
+ * 教程卡片组件
+ * 
+ * 功能：
+ * - 展示使用教程列表
+ * - 提供跳转链接
+ * - 显示教程序号
+ * 
+ * 数据依赖：
+ * - 使用mock/appData.ts中的tutorials数据
+ * 
+ * 交互：
+ * - 点击"查看详情"会跳转到教程页面
+ * - 悬停时有轻微上浮效果
+ */
 import { tutorials } from "@/mock/appData";
 import { toast } from "sonner";
 import { motion } from "framer-motion";

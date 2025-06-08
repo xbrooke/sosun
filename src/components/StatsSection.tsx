@@ -1,3 +1,17 @@
+/**
+ * 数据统计区域组件
+ * 
+ * 功能：
+ * - 展示关键统计数据
+ * - 提供入场动画效果
+ * 
+ * 数据依赖：
+ * - 使用mock/appData.ts中的statsData
+ * 
+ * 动画：
+ * - 每个统计项依次淡入
+ * - 延迟动画避免同时出现
+ */
 import { statsData } from "@/mock/appData";
 import { motion } from "framer-motion";
 

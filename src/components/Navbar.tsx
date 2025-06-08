@@ -19,10 +19,16 @@ export default function Navbar() {
   return (
     <nav className="flex items-center justify-between p-4 border-b border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm bg-white/80 dark:bg-gray-800/80">
       <div className="text-gray-800 dark:text-gray-200 font-semibold text-lg">
-        徐大兵Brooke
+         <a href="/" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">徐大兵Brooke</a>
       </div>
       
-      <div className="flex items-center gap-4">
+       <div className="flex items-center gap-6">
+        <a 
+          href="/about" 
+          className="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+        >
+          关于
+        </a>
         <a 
           href="https://github.com" 
           target="_blank" 
