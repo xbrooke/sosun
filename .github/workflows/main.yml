@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: CI/CD Pipeline
 
 on:
   push:
@@ -9,22 +9,24 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v4
       
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      # 安装pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
         with:
-          node-version: '20'
+          version: latest
           
       - name: Install dependencies
         run: pnpm install
-      
-      - name: Build
-        run: pnpm build
         
-      - name: Upload Artifact
+      - name: Build project
+        run: pnpm run build
+        
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: dist
+          name: production-build
           path: dist
