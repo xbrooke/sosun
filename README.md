@@ -1,77 +1,65 @@
-# 领克第三方应用商店项目
+# 领克第三方应用商店
 
-## 项目简介
-这是一个为领克车主提供的第三方应用商店，包含Free和Pro两个版本的应用下载功能。
+这是一个为领克汽车用户开发的第三方应用商店前端项目，基于React + TypeScript + Tailwind CSS技术栈构建。
 
-## GitHub代码上传指南
+## 功能特性
 
-### 1. 准备工作
-- 确保已安装Git ([下载地址](https://git-scm.com/downloads))
-- 拥有GitHub账号 ([注册地址](https://github.com/signup))
+- 应用下载管理（Free版和Pro版）
+- 微信公众号关注与互动
+- 支付支持功能
+- 使用教程展示
+- 响应式设计，适配多种设备
 
-### 2. 创建GitHub仓库
-1. 登录GitHub账号
-2. 点击右上角"+" → "New repository"
-3. 填写仓库名称(如"lynk-app-store")
-4. 选择"Public"(公开)或"Private"(私有)
-5. 点击"Create repository"
+## 技术栈
 
-### 3. 本地Git初始化
-在项目根目录执行以下命令：1
+- React 18
+- TypeScript
+- Tailwind CSS
+- Vite
+- Framer Motion (动画效果)
 
+## 快速开始
+
+### 安装依赖
 ```bash
-# 初始化Git仓库
-git init
-
-# 添加所有文件到暂存区
-git add .
-
-# 提交更改
-git commit -m "初始提交"
+pnpm install
 ```
 
-### 4. 连接远程仓库
-复制GitHub仓库的SSH或HTTPS地址，然后执行：
-
+### 开发模式
 ```bash
-# 添加远程仓库
-git remote add origin 你的仓库地址
-
-# 验证远程仓库
-git remote -v
+pnpm dev
 ```
 
-### 5. 推送代码
-执行推送命令：
-
+### 生产构建
 ```bash
-# 首次推送(设置上游分支)
-git push -u origin main
-
-# 后续推送
-git push
+pnpm build
 ```
 
-### 6. 验证
-刷新GitHub仓库页面，确认代码已成功上传。
-
-## 常见问题
-1. 权限错误：确保GitHub账号有仓库写入权限
-2. 冲突解决：使用`git pull`拉取最新代码后再推送
-3. 大文件：GitHub限制文件大小不超过100MB
+### 预览生产版本
+```bash
+pnpm serve
+```
 
 ## 项目结构
+
 ```
-├── src/
-│   ├── components/ - 所有React组件
-│   ├── hooks/ - 自定义Hook
-│   ├── pages/ - 页面组件
-│   └── mock/ - 模拟数据
-├── public/ - 静态资源
-└── README.md - 项目文档
+├── src
+│   ├── components      # 公共组件
+│   ├── hooks          # 自定义hooks
+│   ├── lib            # 工具函数
+│   ├── mock           # 模拟数据
+│   ├── pages          # 页面组件
+│   └── App.tsx        # 根组件
+├── public             # 静态资源
+└── vite.config.ts     # Vite配置
 ```
 
-## 开发指南
-1. 安装依赖：`pnpm install`
-2. 启动开发服务器：`pnpm dev`
-3. 构建生产版本：`pnpm build`
+## 部署指南
+
+1. 构建生产版本
+2. 将dist目录内容上传到静态托管服务
+3. 配置正确的base路径
+
+## 联系信息
+
+如有问题请联系：xbrooke
