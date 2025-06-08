@@ -3,8 +3,9 @@ import { toast } from "sonner";
 import { motion } from "framer-motion";
 
 export default function TutorialCard() {
-  const handleClick = () => {
+  const handleClick = (link: string) => {
     toast('即将跳转到教程页面');
+    window.location.href = link;
   };
 
   return (
@@ -37,7 +38,7 @@ export default function TutorialCard() {
               </p>
               <motion.button
                 whileHover={{ x: 5 }}
-                onClick={handleClick}
+                onClick={() => handleClick(tutorial.link)}
                 className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors"
               >
                 查看详情

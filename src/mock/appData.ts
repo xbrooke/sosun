@@ -68,15 +68,18 @@ export const wechatAccounts = {
 export const tutorials = [
   {
     title: "快速入门指南",
-    description: "10分钟快速掌握应用核心功能，立即提升工作效率"
+    description: "10分钟快速掌握应用核心功能，立即提升工作效率",
+    link: "https://example.com/tutorial/quick-start"
   },
   {
     title: "高级使用技巧",
-    description: "探索隐藏的高级功能和快捷操作方式，成为高级用户"
+    description: "探索隐藏的高级功能和快捷操作方式，成为高级用户",
+    link: "https://example.com/tutorial/advanced"
   },
   {
     title: "数据统计分析",
-    description: "学会使用强大的数据分析功能，洞察您的行为模式"
+    description: "学会使用强大的数据分析功能，洞察您的行为模式",
+    link: "https://example.com/tutorial/analytics"
   }
 ];
 
