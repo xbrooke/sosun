@@ -7,7 +7,7 @@
     "dev": "pnpm dev:client",
     "dev:client": "vite --host --port 3000",
     "build:client": "vite build --outDir dist/static",
-    "build": "pnpm build:client"
+    "build": "vite build && cp dist/index.html dist/404.html"
   },
   "dependencies": {
     "clsx": "^2.1.1",
