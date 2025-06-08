@@ -9,9 +9,12 @@
       const search = window.location.search;
       const hash = window.location.hash;
       
+      // 处理GitHub Pages的特殊情况
+      const base = '/';
+      const redirectPath = path.startsWith(base) ? path : base + path.slice(1);
+      
       // 直接重定向到index.html并保留路径
-      sessionStorage.redirect = path;
-      window.location.href = '/#' + path + (search || '') + (hash || '');
+      window.location.href = window.location.origin + base + 'index.html' + redirectPath + (search || '') + (hash || '');
     </script>
   </head>
   <body>
