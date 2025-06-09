@@ -19,7 +19,7 @@
     "sonner": "^2.0.2",
     "tailwind-merge": "^3.0.2",
     "zod": "^3.24.2",
-    "vite-plugin-static-copy": "^0.18.0"
+    "vite-plugin-static-copy": "^3.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.12",
