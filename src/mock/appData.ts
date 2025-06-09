@@ -33,22 +33,22 @@ export const appInfo = {
   versions: {
     free: {
       name: "Free版",
-      version: "v1.2.0",
+      version: "v3.3.2",
       description: "基础车机功能体验",
       features: [
-        "车机应用一键安装",
-        "基础主题切换",
+        "应用一键安装",
+        "基础功能切换",
         "集成系统设置"
       ]
     },
     pro: {
       name: "Pro版",
-      version: "v2.1.0",
+      version: "v4.1.2",
       description: "更丰富的车机应用",
       features: [
-        "更多适配软件",
-        "驾驶行为分析", 
-        "车机性能优化"
+        "专属适配软件",
+        "娱乐模块", 
+        "持续更新"
       ]
     }
   },

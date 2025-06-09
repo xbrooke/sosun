@@ -1,55 +1,76 @@
-# 领克第三方应用商店
+# 领克第三方应用商店 - 前端项目
 
-## GitHub Pages 部署指南
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-1. 确保项目已推送到GitHub仓库
-2. 在仓库设置中启用GitHub Pages
-3. 选择部署分支（通常是gh-pages或main）
-4. 设置根目录为 `/ (root)`
+## 项目概述
+专为领克车主开发的车机应用商店前端，提供应用下载、教程查看等功能。
 
-### 路由问题解决方案
+## 功能特性
+- 应用版本管理（Free/Pro版）
+- 微信/支付宝赞赏支持
+- 使用教程展示
+- 暗黑/明亮主题切换
+- 响应式设计适配多设备
 
-GitHub Pages默认不支持SPA路由，需要以下配置：
+## 技术栈
+- React 18 + TypeScript
+- Tailwind CSS
+- Vite构建工具
+- React Router路由管理
+- Framer Motion动画库
 
-1. 项目必须包含`public/404.html`文件
-2. 确保vite配置正确：
-```js
-// vite.config.ts
-export default defineConfig({
-  base: '/your-repo-name/', // 如果部署在子路径
-  // ...
-})
+## 项目结构
 ```
+├── public/                # 静态资源
+│   ├── downloads/         # 应用安装包存放目录
+│   ├── 404.html           # 404页面
+│   └── _redirects         # 重定向规则
+│
+├── src/                   # 源代码
+│   ├── assets/            # 静态资源
+│   ├── components/        # 可复用组件
+│   ├── db/                # 数据文件
+│   ├── hooks/             # 自定义Hook
+│   ├── lib/               # 工具函数
+│   ├── mock/              # 模拟数据
+│   ├── pages/             # 页面组件
+│   ├── App.tsx            # 主应用组件
+│   ├── main.tsx           # 应用入口
+│   └── vite-env.d.ts      # 类型声明
+│
+├── .github/               # GitHub工作流
+├── DOCUMENTATION.md       # 详细文档
+├── DOWNLOAD_GUIDE.md      # 下载指南
+├── GIT_GUIDE.md           # Git使用指南
+└── PROJECT_README.md      # 项目简介
 
-3. 路由组件需要处理哈希路由：
-```jsx
-<BrowserRouter basename={import.meta.env.BASE_URL}>
-  {/* 路由配置 */}
-</BrowserRouter>
-```
-
-### 本地测试
-
-1. 安装`gh-pages`:
+## 开发指南
+1. 克隆仓库
 ```bash
-npm install gh-pages --save-dev
+git clone https://github.com/xbrooke/link-app-store.git
+cd link-app-store
 ```
 
-2. 在package.json中添加部署脚本:
-```json
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-}
-```
-
-3. 运行部署:
+2. 安装依赖
 ```bash
-npm run deploy
+pnpm install
 ```
 
-### 注意事项
+3. 启动开发服务器
+```bash
+pnpm dev
+```
 
-- 首次部署可能需要几分钟生效
-- 清除浏览器缓存后测试
-- 如果使用自定义域名，需要配置CNAME文件
+## 部署指南
+1. 构建生产版本
+```bash
+pnpm build
+```
+
+2. 将dist目录内容上传至静态托管服务
+
+## 贡献指南
+欢迎提交Pull Request，请遵循现有代码风格。
+
+## 许可证
+MIT License
