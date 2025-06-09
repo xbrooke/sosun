@@ -5,6 +5,10 @@
  * 修改图片方法：
  * 1. 找到对应的图片URL字段
  * 2. 替换为新的图片URL
+ * 
+ * 下载配置：
+ * - Free版下载路径: /downloads/link-app-store-free.zip
+ * - Pro版下载路径: /downloads/link-app-store-pro.zip
  * 3. 保存文件即可生效
  * 
  * 数据使用说明：
@@ -105,9 +109,9 @@ export const testimonials = [
     image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=modern%20car%20infotainment%20system%20interface%20with%20navigation%20and%20media%20controls%2C%20blue%20theme&sign=c55df5a5fcc5a63d1da91b4e95bda832"
   },
   {
-    title: "LYNK OS N 1.3",
+    title: "LYNK OS N 1.2升级1.3带应用商店",
     features: [
-      "LYNK OS N 1.3"
+      "LYNK OS N 1.3（商店版）"
     ],
     // 支持系统图片2 - 建议尺寸: 16:9宽屏
     image: "https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=futuristic%20car%20infotainment%20system%20interface%20with%20AI%20assistant%2C%20purple%20theme&sign=dd17f7f526d37b83779a84c143a92ca9"

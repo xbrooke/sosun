@@ -54,16 +54,30 @@ export default function FreeDownloadModal({ onClose, onDownload }: FreeDownloadM
             <h4 className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-4">
               直接下载应用
             </h4>
-             <button
-              onClick={() => {
-                onDownload();
-                window.location.href = 'https://www.baidu.com';
-              }}
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-4 rounded-lg transition-colors"
-            >
-              <i className="fa-solid fa-download mr-2"></i>
-              立即下载 Free版
-            </button>
+              <button
+                onClick={() => {
+                  onDownload();
+                  const downloadUrl = `${window.location.origin}/downloads/free.apk`;
+                  const a = document.createElement('a');
+                  a.href = downloadUrl;
+                  a.download = 'free.apk';
+                  document.body.appendChild(a);
+                  a.click();
+                  document.body.removeChild(a);
+                  // 添加下载统计
+                  fetch('/api/download', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ file: 'free' })
+                  });
+                }}
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-4 rounded-lg transition-colors"
+              >
+                <i className="fa-solid fa-download mr-2"></i>
+                立即下载 Free版
+              </button>
           </div>
 
           {/* 分隔线 */}

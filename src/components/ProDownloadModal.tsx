@@ -55,7 +55,7 @@ export default function ProDownloadModal({ onClose, onDownload }: ProDownloadMod
               <button
                onClick={() => {
                  onDownload();
-                 window.location.href = 'https://www.baidu.com';
+                  window.location.href = `${window.location.origin}/downloads/pro.apk`;
                  toast.success('Pro版 下载已开始');
                  setTimeout(() => {
                    toast('Pro版 下载完成');
