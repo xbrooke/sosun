@@ -9,7 +9,7 @@ const root = createRoot(document.getElementById("root")!);
 
 root.render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <App />
       <Toaster position="top-right" />
     </BrowserRouter>

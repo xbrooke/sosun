@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      // 处理SPA路由问题 - 更简单的重定向逻辑
-      const path = window.location.pathname;
+      // 处理SPA路由问题 - 优化后的重定向逻辑
+      const path = window.location.pathname.replace(/\/index\.html/g, '');
       const search = window.location.search;
       const hash = window.location.hash;
       
-      // 处理GitHub Pages的特殊情况
+      // 处理Netlify的特殊情况
       const base = '/';
-      const redirectPath = path.startsWith(base) ? path : base + path.slice(1);
+      const cleanPath = path.startsWith(base) ? path : base + path.slice(1);
       
       // 直接重定向到index.html并保留路径
-      window.location.href = window.location.origin + base + 'index.html' + redirectPath + (search || '') + (hash || '');
+      window.location.href = window.location.origin + base + 'index.html#' + cleanPath + (search || '') + (hash || '');
     </script>
   </head>
   <body>
