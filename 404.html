@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // 处理SPA路由问题 - 优化后的重定向逻辑
+      const path = window.location.pathname.replace(/\/index\.html/g, '');
+      const search = window.location.search;
+      const hash = window.location.hash;
+      
+      // 处理Netlify的特殊情况
+      const base = '/';
+      const cleanPath = path.startsWith(base) ? path : base + path.slice(1);
+      
+      // 直接重定向到index.html并保留路径
+      window.location.href = window.location.origin + base + 'index.html#' + cleanPath + (search || '') + (hash || '');
+    </script>
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+  </body>
+</html>
